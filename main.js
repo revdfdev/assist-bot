@@ -17,3 +17,8 @@ rest.post('/google_now_bot', function(req, res) {
             source: 'rehan-bot' 
         });
 });
+
+
+rest.listen((process.env.PORT || 8000), function() {
+    console.log("Server up and listening");
+});
