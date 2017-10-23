@@ -9,7 +9,7 @@ rest.use(parser.urlencoded({
 
 rest.use(parser.json());
 
-rest.post('google_now_bot', function(req, res) {
+rest.post('/google_now_bot', function(req, res) {
     if (req.body == undefined || req.body === null) {
         var speech = "It seems like there is a problem"
         res.json({
