@@ -10,12 +10,10 @@ rest.use(parser.urlencoded({
 rest.use(parser.json());
 
 rest.post('/google_now_bot', function(req, res) {
-    if (req.body == undefined || req.body === null) {
-        var speech = "It seems like there is a problem"
+    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.message ? req.body.result.parameters.message : "Seems like some problem. Speak again."
         res.json({
             message: speech,
             displayText: speech,
             source: 'rehan-bot' 
         });
-    }
 });
